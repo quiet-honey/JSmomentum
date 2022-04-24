@@ -30,21 +30,29 @@ const quotes = [
   },
   {
     quote: "Never go on trips with anyone you do not love.",
-    author: "Hemmingway",
+    author: "Ernest Hemmingway",
   },
   {
     quote: "We wander for distraction, but we travel for fulfilment.",
     author: "Hilaire Belloc",
   },
   {
-    quote: "Travel expands the mind and fills the gap.",
-    author: "Sheda Savage",
+    quote: "I walk slowly, but I never walk backward.",
+    author: "Abraham Lincoln",
+  },
+  {
+    quote: "Form is Temporary, Class is Permanent.",
+    author: "Bill Shankly",
   },
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+const quote = document.querySelector("#quoteContent");
+const author = document.querySelector("#quoteAuthor");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const quoteLink = document.querySelector("#quoteLink");
+const authorWikiUrl = `https://en.wikipedia.org/wiki/${todaysQuote.author}`;
 
-quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+quote.innerText = `${todaysQuote.quote}`;
+author.innerText = `${todaysQuote.author}`;
+quoteLink.setAttribute("href", authorWikiUrl);
+quoteLink.setAttribute("target", "_blank");

@@ -16,7 +16,8 @@ function paintTodo(newTodo) {
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   const btn = document.createElement("button");
-  btn.innerText = "❌";
+  btn.setAttribute("class", "removebtn");
+  btn.innerText = "X";
   btn.addEventListener("click", onBtnCLk);
   li.appendChild(span);
   li.appendChild(btn);

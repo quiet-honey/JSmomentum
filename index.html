@@ -4,37 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+    </style>
     <title>Momemtum App</title>
   </head>
-  <body>
-    <h2 id="clock">00:00:00</h2>
-    <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="Log In" />
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input required type="text" placeholder="Write a To Do and Press Enter" />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
+  <body class="normalmode">
+    <div class="buttons">
+      <button
+        id="mode"
+        class="btnNormal mdNormal"
+        style="background-position: center; background-size: cover"
+      ></button>
+      <button
+        id="logout"
+        class="btnNormal loNormal hidden"
+        style="background-position: center; background-size: cover"
+      ></button>
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
+    <div class="in">
+      <h2 id="calendar">Today is 0000.00.00</h2>
+      <h2 id="clock">00:00:00</h2>
+      <form id="login-form" class="hidden">
+        <input
+          id="name"
+          class="normalmode"
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <input
+          id="namebutton"
+          class="normalmode"
+          type="submit"
+          value="Log In"
+        />
+      </form>
+      <h1 id="greeting" class="hidden"></h1>
+      <form id="todo-form">
+        <input
+          id="todo"
+          class="normalmode"
+          required
+          type="text"
+          placeholder="Write a To Do and Press Enter"
+        />
+      </form>
+      <div class="scrollable">
+        <ul id="todo-list"></ul>
+      </div>
+      <div id="quote">
+        <span id="quoteContent"></span>
+        <br />
+        <span id="quoteAuthor"></span>
+        <a id="quoteLink" href=""
+          ><img
+            title="Click this button to browse Wikipedia of this person"
+            id="authorInfo"
+            src="./image/icon/info_icon.png"
+        /></a>
+      </div>
+      <div id="weather" class="wsNormal hidden">
+        <div style="line-height: 25px">
+          <span id="city"></span>
+          <br />
+          <span id="weatherInfo"></span>
+        </div>
+        <div><img src="" alt="" /></div>
+      </div>
     </div>
     <script src="js/greetings.js"></script>
+    <script src="js/calendar.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/changemode.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="API_KEY"></script>
   </body>
 </html>

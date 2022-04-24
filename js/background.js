@@ -1,6 +1,24 @@
-const images = ["light1.jpg", "light2.jpg", "light3.jpg", "light4.jpg"];
-const chosenImage = images[Math.floor(Math.random() * images.length)];
-const bgImage = document.createElement("img");
+const images = [
+  "image/light1.jpg",
+  "image/light2.jpg",
+  "image/light3.jpg",
+  "image/light4.jpg",
+];
+const darkImages = [
+  "image/dark1.jpg",
+  "image/dark2.jpg",
+  "image/dark3.jpg",
+  "image/dark4.jpg",
+];
 
-bgImage.src = `image/${chosenImage}`;
-document.body.appendChild(bgImage);
+function normalImage() {
+  const chosenImage = images[Math.floor(Math.random() * images.length)];
+  document.body.style.backgroundImage = "url('" + chosenImage + "')";
+}
+function darkImage() {
+  const chosenDarkImage =
+    darkImages[Math.floor(Math.random() * darkImages.length)];
+  document.body.style.backgroundImage = "url('" + chosenDarkImage + "')";
+}
+
+normalImage();
