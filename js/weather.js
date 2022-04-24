@@ -1,3 +1,4 @@
+const API_KEY = "7213130cd4a23f29ac8b8a3b5c474897";
 const weatherWindow = document.querySelector("#weather");
 
 function onGeoOk(position) {
